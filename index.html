@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanación Chamánica | Fracturas del Alma - Espacio INYO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        h1, h2, h3, .ancentral-font { font-family: 'Cinzel', serif; text-transform: uppercase; letter-spacing: 0.1em; }
+        body { font-family: 'Lato', sans-serif; background-color: #0c0a09; color: #d6d3d1; line-height: 1.8; }
+        
+        .hero-chamanismo { 
+            background: linear-gradient(rgba(12, 10, 9, 0.8), rgba(12, 10, 9, 0.95)), 
+            url('https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=1470&q=80'); 
+            background-size: cover; background-position: center; min-height: 90vh;
+        }
+
+        .smoke-bg { position: relative; overflow: hidden; }
+        .smoke-bg::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.05) 0%, transparent 70%);
+            z-index: 0; pointer-events: none;
+        }
+
+        /* Estilos de Turnos */
+        .turno-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(138, 116, 77, 0.2); transition: all 0.3s ease; }
+        .turno-disponible { border-left: 4px solid #8a744d; }
+        .turno-ocupado { opacity: 0.4; border-left: 4px solid #444; pointer-events: none; text-decoration: line-through; }
+        
+        #menu-toggle:checked ~ #side-menu { transform: translateX(0); }
+        #menu-toggle:checked ~ #menu-overlay { display: block; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <input type="checkbox" id="menu-toggle" class="hidden">
+    <label for="menu-toggle" class="fixed top-6 left-6 z-50 cursor-pointer bg-stone-900/50 backdrop-blur-md p-3 rounded-sm border border-stone-800 hover:bg-stone-700 transition duration-300 text-white">
+        <div class="w-6 h-0.5 bg-current mb-1.5 transition"></div>
+        <div class="w-6 h-0.5 bg-current mb-1.5 transition"></div>
+        <div class="w-6 h-0.5 bg-current transition"></div>
+    </label>
+    <label id="menu-overlay" for="menu-toggle" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-40 hidden"></label>
+
+    <nav id="side-menu" class="fixed top-0 left-0 h-full w-72 bg-[#0c0a09] z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out p-12 flex flex-col border-r border-white/5">
+        <label for="menu-toggle" class="absolute top-6 right-6 cursor-pointer text-stone-500 text-xl"><i class="fas fa-times"></i></label>
+        <div class="mt-12 italic text-stone-300">
+            <p class="text-[10px] uppercase tracking-[0.3em] text-stone-500 mb-8 font-bold border-b border-white/5 pb-2">Espacio INYO ☯️</p>
+            <ul class="space-y-8 text-sm uppercase tracking-widest font-semibold">
+                <li><a href="https://inyodo.github.io/masaje-japones-/" class="block hover:text-stone-100 transition">Masaje Japonés</a></li>
+                <li><a href="https://inyodo.github.io/hiit-calistenia/" class="block hover:text-stone-100 transition">HIIT Calistenia</a></li>
+                <li><a href="https://inyodo.github.io/espacio-inyo-web/yoga.html" class="block hover:text-stone-100 transition">Clases de Yoga</a></li>
+                <li><a href="https://www.holayoga.com.ar/" target="_blank" class="block hover:text-stone-100 transition">Coaching Online</a></li>
+                <li><a href="https://inyodo.github.io/espacio-inyo-web/zen-stretching.html" class="block hover:text-stone-100 transition">Zen Stretching</a></li>
+                <li><a href="https://inyodo.github.io/espacio-inyo-web/artes-marciales.html" class="block hover:text-stone-100 transition">Artes Marciales</a></li>
+                <li><a href="#" class="block text-white font-bold underline underline-offset-8">Chamanismo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-chamanismo flex flex-col justify-center items-center text-center p-6 text-white relative">
+        <div class="z-10 px-4">
+            <p class="text-stone-500 text-xs tracking-[0.8em] mb-4 font-bold uppercase">Medicina Ancestral</p>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 italic leading-tight">SANACIÓN DE LAS<br>FRACTURAS DEL ALMA</h1>
+            <div class="w-32 h-px bg-stone-600 mx-auto my-8"></div>
+            <p class="text-lg md:text-xl text-stone-400 max-w-2xl mx-auto italic">
+                Acompañamiento espiritual y restauración de la integridad vital por Gastón Burgos.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 smoke-bg">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-2xl md:text-3xl mb-12 italic border-l-4 border-stone-700 pl-8 text-stone-200 uppercase">¿En qué consiste una sesión de sanación chamánica?</h2>
+            
+            <div class="space-y-12 text-stone-400 italic text-lg leading-relaxed">
+                <p>• En primer lugar, se conversa brevemente para saber cuál es el problema a tratar, ya sea emocional, espiritual, físico, etcétera...</p>
+                
+                <p>• Luego, el/la paciente se recuesta sobre la manta chamánica mientras el chamán o practicante de chamanismo entra en conciencia acrecentada con el sonido del tambor, la maraca, con su canción de poder...</p>
+                
+                <p>• Una vez logrado este estado particular de conciencia, y con sus ojos vendados, se recuesta al lado del o la paciente, haciendo un contacto de hombros, caderas y pies, preparándose para realizar el viaje chamánico...</p>
+                
+                <p>• Durante ese viaje chamánico se buscan las fracturas del alma relacionadas con el problema del paciente, algún animal de poder que pueda ayudar o alguna información que resulte relevante para esa persona...</p>
+                
+                <p>• Las fracturas del alma se devuelven con un soplido en el corazón y en la cabeza. También se realiza una limpieza de energías densas que interfieren en el bienestar del paciente...</p>
+                
+                <p>• Una vez terminado ese trabajo se le cuenta a la persona todo lo que haya sucedido y se da por finalizada la sesión que suele tener una duración de entre 40 minutos y 1 hora.</p>
+                
+                <p>• Para las sesiones a distancia se intenta replicar lo más posible una sesión presencial, la conversación es por videollamada, el viaje chamánico se realiza hacia donde está el/la paciente sin importar la distancia y resultan igual de eficientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-[#110f0e] border-y border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl md:text-3xl mb-12 italic text-stone-200 uppercase">¿Qué es el Chamanismo y el método aplicado?</h2>
+            <div class="space-y-8 text-stone-400 italic">
+                <p>• El chamanismo es un antigua sistema de sanación espiritual, de expansión de la conciencia y de crecimiento espiritual. Desde hace unas décadas, el chamanismo se ha expandido por todo el mundo.</p>
+                
+                <p>• Durante miles de años, los chamanes han tenido la función de restaurar la integridad del alma, de viajar a los diferentes mundos y rescatar esas partes de nuestra integridad para traerlas a esta realidad.</p>
+                
+                <p>• El alma es la energía vital que tenemos y que traemos desde nuestro nacimiento. Se distribuye por el cuerpo físico, emocional, mental y espiritual de una persona. Pero nuestra alma se puede dañar...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="turnos" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-center text-4xl mb-4 italic uppercase font-bold text-white">Reserva de sesiones</h2>
+            <p class="text-center text-stone-500 text-sm mb-16 italic tracking-widest uppercase">Sábados: Mañana y Tarde</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-16">
+                <div class="turno-card turno-disponible p-8 flex justify-between items-center">
+                    <div>
+                        <p class="text-stone-500 text-[10px] font-bold uppercase tracking-widest mb-1">Turno Mañana</p>
+                        <p class="text-2xl font-bold text-white uppercase italic">10:00 HS</p>
+                    </div>
+                    <a href="https://wa.me/541176194825?text=Hola%20Gaston,%20quisiera%20reservar%20el%20turno%20de%20las%2010hs%20para%20Chamanismo" class="bg-stone-800 text-stone-300 px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">Solicitar</a>
+                </div>
+
+                <div class="turno-card turno-ocupado p-8 flex justify-between items-center">
+                    <div>
+                        <p class="text-stone-500 text-[10px] font-bold uppercase tracking-widest mb-1">Turno Mañana</p>
+                        <p class="text-2xl font-bold text-white uppercase italic">11:00 HS</p>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">No Disponible</span>
+                </div>
+
+                <div class="turno-card turno-disponible p-8 flex justify-between items-center">
+                    <div>
+                        <p class="text-stone-500 text-[10px] font-bold uppercase tracking-widest mb-1">Turno Mañana</p>
+                        <p class="text-2xl font-bold text-white uppercase italic">12:00 HS</p>
+                    </div>
+                    <a href="https://wa.me/541176194825?text=Hola%20Gaston,%20quisiera%20reservar%20el%20turno%20de%20las%2012hs%20para%20Chamanismo" class="bg-stone-800 text-stone-300 px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">Solicitar</a>
+                </div>
+
+                <div class="turno-card turno-disponible p-8 flex justify-between items-center">
+                    <div>
+                        <p class="text-stone-500 text-[10px] font-bold uppercase tracking-widest mb-1">Turno Tarde</p>
+                        <p class="text-2xl font-bold text-white uppercase italic">13:00 HS</p>
+                    </div>
+                    <a href="https://wa.me/541176194825?text=Hola%20Gaston,%20quisiera%20reservar%20el%20turno%20de%20las%2013hs%20para%20Chamanismo" class="bg-stone-800 text-stone-300 px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">Solicitar</a>
+                </div>
+
+                <div class="turno-card turno-disponible p-8 flex justify-between items-center">
+                    <div>
+                        <p class="text-stone-500 text-[10px] font-bold uppercase tracking-widest mb-1">Turno Tarde</p>
+                        <p class="text-2xl font-bold text-white uppercase italic">14:00 HS</p>
+                    </div>
+                    <a href="https://wa.me/541176194825?text=Hola%20Gaston,%20quisiera%20reservar%20el%20turno%20de%20las%2014hs%20para%20Chamanismo" class="bg-stone-800 text-stone-300 px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">Solicitar</a>
+                </div>
+
+                <div class="turno-card turno-disponible p-8 flex justify-between items-center">
+                    <div>
+                        <p class="text-stone-500 text-[10px] font-bold uppercase tracking-widest mb-1">Turno Tarde</p>
+                        <p class="text-2xl font-bold text-white uppercase italic">15:00 HS</p>
+                    </div>
+                    <a href="https://wa.me/541176194825?text=Hola%20Gaston,%20quisiera%20reservar%20el%20turno%20de%20las%2015hs%20para%20Chamanismo" class="bg-stone-800 text-stone-300 px-6 py-2 text-[10px] font-bold uppercase tracking-widest hover:bg-stone-700 transition">Solicitar</a>
+                </div>
+            </div>
+
+            <div class="bg-stone-900/50 p-10 border border-white/5 text-center italic">
+                <p class="text-stone-500 text-[10px] uppercase font-bold tracking-widest mb-4 italic">Valor de la Sesión</p>
+                <div class="text-5xl font-bold text-white mb-6">$45.000.-</div>
+                <div class="space-y-4 text-sm text-stone-400">
+                    <p>• Se reserva abonando el 50% de la sesión.</p>
+                    <p>• La reserva no es transferible ni reembolsable.</p>
+                    <p>• Solo se brinda el turno una vez enviado el comprobante de reserva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-24 px-6 bg-black text-center border-t border-white/5">
+        <h2 class="text-4xl mb-16 italic tracking-tighter uppercase font-bold text-white">Espacio INYO ☯️</h2>
+        <div class="flex flex-col items-center mb-12 italic">
+            <p class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-2">Sede Lanús Oeste Centro</p>
+            <p class="text-stone-400 text-sm">Gdor. Carlos Tejedor 335, Lanús.</p>
+        </div>
+        <p class="text-[9px] text-stone-600 uppercase tracking-widest font-bold">© 2026 Sanación Chamánica | Tradición & Poder</p>
+    </footer>
+
+    <a href="https://wa.me/541176194825" class="fixed bottom-8 right-8 bg-[#25d366]/20 backdrop-blur-sm text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-[#25d366] hover:scale-110 transition-all duration-300 z-50 border border-white/10">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
