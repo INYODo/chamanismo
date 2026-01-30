@@ -34,7 +34,9 @@
     </style>
 </head>
 <body class="antialiased">
-
+<audio id="bgMusic" loop>
+    <source src="audio/Entre los árboles.mp3" type="audio/mpeg">
+</audio>
     <input type="checkbox" id="menu-toggle" class="hidden">
     <label for="menu-toggle" class="fixed top-6 left-6 z-50 cursor-pointer bg-stone-900/50 backdrop-blur-md p-3 rounded-sm border border-stone-800 hover:bg-stone-700 transition duration-300 text-white">
         <div class="w-6 h-0.5 bg-current mb-1.5 transition"></div>
@@ -184,10 +186,24 @@
             <p class="mt-20 text-[9px] text-stone-600 uppercase tracking-widest font-bold">© 2026 Sanación Chamánica | Tradición & Poder</p>
         </div>
     </footer>
-
+<button onclick="toggleMusic()" id="musicBtn" class="fixed bottom-28 right-8 bg-stone-900/50 backdrop-blur-md text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-xl hover:scale-110 transition-all duration-300 z-50 border border-white/10">
+    <i id="musicIcon" class="fas fa-volume-mute"></i>
+</button>
     <a href="https://wa.me/541176194825" class="fixed bottom-8 right-8 bg-[#25d366]/20 backdrop-blur-sm text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-[#25d366] hover:scale-110 transition-all duration-300 z-50 border border-white/10">
         <i class="fab fa-whatsapp"></i>
     </a>
-
+<script>
+    const music = document.getElementById('bgMusic');
+    const icon = document.getElementById('musicIcon');
+    function toggleMusic() {
+        if (music.paused) {
+            music.play().catch(e => console.log("Audio play error:", e));
+            icon.classList.replace('fa-volume-mute', 'fa-volume-up');
+        } else {
+            music.pause();
+            icon.classList.replace('fa-volume-up', 'fa-volume-mute');
+        }
+    }
+</script>
 </body>
 </html>
