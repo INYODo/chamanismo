@@ -198,12 +198,17 @@
     const music = document.getElementById('bgMusic');
     const icon = document.getElementById('musicIcon');
     function toggleMusic() {
+        const btn = document.getElementById('musicBtn');
         if (music.paused) {
             music.play().catch(e => console.log("Audio play error:", e));
             icon.classList.replace('fa-volume-mute', 'fa-volume-up');
+            icon.classList.add('text-stone-200');
+            btn.classList.add('animate-breathe', 'border-stone-400');
         } else {
             music.pause();
             icon.classList.replace('fa-volume-up', 'fa-volume-mute');
+            icon.classList.remove('text-stone-200');
+            btn.classList.remove('animate-breathe', 'border-stone-400');
         }
     }
 </script>
