@@ -251,6 +251,22 @@
     <a href="https://wa.me/541176194825" class="fixed bottom-8 right-8 bg-[#25d366]/20 backdrop-blur-sm text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl hover:bg-[#25d366] hover:scale-110 transition-all duration-300 z-50 border border-white/10">
         <i class="fab fa-whatsapp"></i>
     </a>
+    function solicitarTurnoChamánico(hora, selectId) {
+        const selector = document.getElementById(selectId);
+        const modalidadSeleccionada = selector.value;
+        const fecha = "Sábado 11 de Julio";
+        
+        // Estructura de mensaje cálida, clara y comercialmente impecable
+        let mensaje = `Hola Gastón! 👋 Espero que te encuentres muy bien.\n\n`;
+        mensaje += `Deseo solicitar mi turno para una sesión de *Sanación Chamánica*.\n\n`;
+        mensaje += `📅 *Fecha:* ${fecha}\n`;
+        mensaje += `⏰ *Horario:* ${hora} HS\n`;
+        mensaje += `🌿 *Modalidad seleccionada:* ${modalidadSeleccionada}\n\n`;
+        mensaje += `Entiendo que el valor de la sesión es de $60.000 y se confirma enviando el comprobante de la reserva por el 50% ($30.000). Quedo atento para que me indiques cómo proceder. ¡Muchas gracias!`;
+        
+        const url = `https://wa.me/541176194825?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+    }
 <script>
     const music = document.getElementById('bgMusic');
     const icon = document.getElementById('musicIcon');
