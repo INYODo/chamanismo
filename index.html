@@ -155,23 +155,23 @@
                         </div>
 
                         <!-- 14:30 HS - DISPONIBLE -->
+                        <div class="turno-card turno-ocupado p-6 flex justify-between items-center text-stone-600">
+                            <p class="text-xl font-bold uppercase italic">14:30 HS</p>
+                            <span class="bg-stone-900 px-4 py-1 text-[9px] font-bold uppercase tracking-widest italic">Ocupado</span>
+                        </div>
+
+                        <!-- 15:30 HS - OCUPADO -->
                         <div class="turno-card turno-disponible p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-stone-700 transition-all">
                             <div class="w-full">
-                                <p class="text-xl font-bold text-white uppercase italic">14:30 HS</p>
+                                <p class="text-xl font-bold text-white uppercase italic">15:30 HS</p>
                                 <div class="mt-2 flex items-center gap-2">
-                                    <select id="modalidad-1430" class="bg-stone-900/80 text-stone-400 text-[10px] font-bold uppercase tracking-wider px-2 py-1 border border-stone-800 rounded-sm focus:outline-none focus:border-stone-600 italic cursor-pointer w-full sm:w-auto">
+                                    <select id="modalidad-1330" class="bg-stone-900/80 text-stone-400 text-[10px] font-bold uppercase tracking-wider px-2 py-1 border border-stone-800 rounded-sm focus:outline-none focus:border-stone-600 italic cursor-pointer w-full sm:w-auto">
                                         <option value="A distancia (Videollamada)">A distancia 🌍</option>
                                         <option value="Presencial (Sede Lanús)">Presencial 🏠</option>
                                     </select>
                                 </div>
                             </div>
-                            <button onclick="solicitarTurnoChamánico('14:30', 'modalidad-1430')" class="w-full sm:w-auto bg-stone-800 text-stone-200 px-6 py-2 text-[9px] font-bold uppercase tracking-widest hover:bg-stone-700 transition italic text-center">Solicitar</button>
-                        </div>
-
-                        <!-- 15:30 HS - OCUPADO -->
-                        <div class="turno-card turno-ocupado p-6 flex justify-between items-center text-stone-600">
-                            <p class="text-xl font-bold uppercase italic">15:30 HS</p>
-                            <span class="bg-stone-900 px-4 py-1 text-[9px] font-bold uppercase tracking-widest italic">Ocupado</span>
+                            <button onclick="solicitarTurnoChamánico('15:30', 'modalidad-1330')" class="w-full sm:w-auto bg-stone-800 text-stone-200 px-6 py-2 text-[9px] font-bold uppercase tracking-widest hover:bg-stone-700 transition italic text-center">Solicitar</button>
                         </div>
 
                         <!-- 16:30 HS - OCUPADO -->
